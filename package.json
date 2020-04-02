@@ -1,25 +1,37 @@
 {
   "name": "@restqa/restqadata",
   "version": "0.0.1",
-  "description": "",
+  "description": "Data management for test automation - Restqa Labs",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "start:dev": "nodemon -r dotenv/config index.js",
+    "serve": "node server.js",
+    "serve:dev": "nodemon -r dotenv/config server.js",
     "test": "jest",
     "test:watch": "jest --watch --coverage",
     "test:coverage": "jest --coverage",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "restqa",
+    "qa",
+    "test automation",
+    "data input",
+    "quality assurance",
+    "confluence",
+    "atlassian",
+    "google sheets",
+    "google sheet",
+    "Csv",
+    "Express"
+  ],
+  "author": "Olivier Rodomond <hi@olivierodo.me>",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "express": "^4.17.1",
     "got": "^10.7.0",
-    "lightship": "^6.1.0",
-    "winston": "^3.2.1"
+    "html-table-to-json": "^1.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
@@ -28,10 +40,6 @@
     "standard": "^14.3.3"
   },
   "jest": {
-    "globals": {
-      "$": true
-    },
-    "setupFiles": ["<rootDir>/.setup.jest.js"],
     "coverageThreshold": {
       "global": {
         "branches": 100,
@@ -42,9 +50,7 @@
     }
   },
   "standard": {
-    "globals": [
-      "$"
-    ],
+    "globals": [],
     "env": [
       "jest"
     ],

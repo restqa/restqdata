@@ -1,19 +1,7 @@
-global.$ = require('./global')
+const Data = require('./src')
 
-const http = require('http')
-  .createServer(require('./server/app'))
-  .listen($.config.port, () => {
-    $.log.info('Running server on :' + $.config.port)
-    $.readiness.signalReady()
-  })
+function RestQData (options) {
+  return Data.getChannel(options)
+}
 
-process.on('SIGTERM', () => {
-  $.log.info('Received SIGTERM. Exiting')
-  http && http.close(() => process.exit(0))
-})
-
-process.on('uncaughtException', (err) => {
-  $.log.info('Received uncaughtException. Exiting')
-  $.log.info(err.stack)
-  http && http.close(() => process.exit(1))
-})
+module.exports = RestQData

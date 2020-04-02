@@ -1,4 +1,6 @@
 # Logs
+data
+test.sample.js
 logs
 *.log
 npm-debug.log*
