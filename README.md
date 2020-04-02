@@ -38,8 +38,8 @@ const RestQData = require('@restqa/restqdata')
 let options = {
   channel: 'google-sheet',
   config: {
-    id: 'your-google-sheet-id,
-    apikey: 'your-service-account-api-key',
+    id: 'your-google-sheet-id',
+    apikey: 'your-service-account-api-key'
   }
 }
 
@@ -78,7 +78,7 @@ data.get('users', 3) // get the sheet named "users" and get the row number 3
 * `config.space_key` (required) The space identifier where the dataset page is located
 * `config.auth.username` (required) The authentication username
 * `config.auth.password` (required) The authentication password
-* `config.prefix_title` (required) The prefix of your resource page , default: Dataset (example: to get the resource "user", the script will search for a page called "Dataset users")
+* `config.prefix_title` (optional) The prefix of your resource page , default: Dataset (example: to get the resource "user", the script will search for a page called "Dataset users")
 
 ### The Server way
 
