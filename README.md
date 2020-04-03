@@ -1,7 +1,7 @@
 RestQData
 ============
 
-> One the key challenge of test automation are the data, RestQData is a simple library to support your test automation by connecting to a specific data sheets and serve it to you as a JSON object
+> One of the key challenge of test automation is using up to data data, RestQData is a simple library to support your test automation by connecting to a specific dataset and serve it to you as a JSON object
 
 ---
 
