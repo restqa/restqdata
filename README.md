@@ -1,7 +1,11 @@
-RestQData
+![restqdata logo](./docs/restqdata-logo.svg)
 ============
 
+
+
 > One of the key challenge of test automation is using up to data data, RestQData is a simple library to support your test automation by connecting to a specific dataset and serve it to you as a JSON object
+
+![Build](https://github.com/restqa/restqdata/workflows/Build/badge.svg)
 
 ---
 
