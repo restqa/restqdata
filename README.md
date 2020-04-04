@@ -1,4 +1,4 @@
-![restqdata logo](./docs/restqdata-logo.png)
+![restqdata logo](https://restqa.io/assets/img/logos/restqdata-logo.png)
 ============
 
 
