@@ -29,6 +29,7 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
+    "csv-parse": "^4.8.8",
     "express": "^4.17.1",
     "got": "^10.7.0",
     "html-table-to-json": "^1.0.0"

@@ -84,6 +84,11 @@ data.get('users', 3) // get the sheet named "users" and get the row number 3
 * `config.auth.password` (required) The authentication password
 * `config.prefix_title` (optional) The prefix of your resource page , default: Dataset (example: to get the resource "user", the script will search for a page called "Dataset users")
 
+##### Excel (csv)
+
+* `config.folder` (required) The folder where the dataset files are stored
+* `config.delimiter` (optional) delimiter userd in the csv, default: `,`
+
 ### The Server way
 
 @todo
