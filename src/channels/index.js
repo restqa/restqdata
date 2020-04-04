@@ -1,4 +1,5 @@
 module.exports = {
   'google-sheet': require('./google-sheet'),
-  confluence: require('./confluence')
+  confluence: require('./confluence'),
+  csv: require('./csv')
 }

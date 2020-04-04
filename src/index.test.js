@@ -16,7 +16,7 @@ describe('#Services - data', () => {
           channel: 'foo'
         }
         data.getChannel(options)
-      }).toThrow(new Error('The channel "foo" doesn\'t exist. Available : google-sheet, confluence'))
+      }).toThrow(new Error('The channel "foo" doesn\'t exist. Available : google-sheet, confluence, csv'))
     })
 
     test('Success - call channel function', () => {
