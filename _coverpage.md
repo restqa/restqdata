@@ -4,9 +4,7 @@
 
 > RestQData is a simple data library to support your test automation by connecting to a specific dataset and serve it to you as a JSON object
 
-- Serve data from Google Sheet
-- Serve data from Confluence
-- Serve data from local csv file
+- Serve data from GSheet, Confluence, Excel file
 - Library version
 - Server version
 
