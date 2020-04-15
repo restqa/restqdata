@@ -12,3 +12,8 @@
 
 [GitHub](https://github.com/restqa/restqdata)
 [Getting Started](#restqdata)
+
+
+<!-- background color -->
+
+![color](#f0f0f0)
