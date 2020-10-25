@@ -25,7 +25,14 @@ switch (options.channel) {
       apikey: process.env.RESTQDATA_GOOGLE_SHEEET_API_KEY
     }
     break
+  case 'csv':
+    options.config = {
+      folder: process.env.RESTQDATA_CSV_FOLDER
+    }
+    break
 }
+
+options.storage = process.env.RESTQDATA_STORAGE_FOLDER
 
 const Data = RestQData(options)
 
@@ -48,6 +55,17 @@ const ApiErrors = {
 
 express()
   .disable('x-powered-by')
+  .use(express.json())
+  .post('/storages', (req, res, next) => {
+    const { filename, data } = req.body
+    const result = Data.storage.set(filename, data)
+    res.sendFile(result)
+  })
+  .get('/storages/:filename', (req, res, next) => {
+    const { filename } = req.params
+    const result = Data.storage.get(filename)
+    res.sendFile(result)
+  })
   .get('/:resource/:row', async (req, res, next) => {
     try {
       const { resource, row } = req.params
@@ -70,6 +88,7 @@ express()
     if (!err.httpStatus) {
       err.httpStatus = 500
     }
+    console.log(err)
     return res
       .status(err.httpStatus)
       .set('x-restqdata-channel', options.channel)

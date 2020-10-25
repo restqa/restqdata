@@ -1,4 +1,5 @@
 const Channels = require('./channels')
+const Storages = require('./storages')
 
 function getChannel (opt) {
   const ChannelFn = Channels[opt.channel]
@@ -6,6 +7,16 @@ function getChannel (opt) {
   return new ChannelFn(opt.config)
 }
 
-module.exports = {
-  getChannel
+function getStorage (opt) {
+  return Storages(opt)
+}
+
+module.exports = function (options) {
+  options = options || {}
+  let result = {}
+  if (options.channel) {
+    result = getChannel(options)
+  }
+  result.storage = getStorage(options)
+  return result
 }
