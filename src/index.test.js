@@ -3,9 +3,23 @@ beforeEach(() => {
 })
 
 describe('#Services - data', () => {
-  test('Available methods', () => {
+  test('Module type ', () => {
     const data = require('./index')
-    expect(Object.keys(data)).toEqual(['getChannel'])
+    expect(typeof data).toEqual('function')
+  })
+
+  test('Available methods when the channel is not defined into the options', () => {
+    const data = require('./index')()
+    expect(Object.keys(data)).toEqual(['storage'])
+  })
+
+  test('GetStorage', () => {
+    const Storage = require('./storages')
+    jest.mock('./storages')
+    const opt = { storage: '/data' }
+    require('./index')(opt)
+    expect(Storage.mock.calls.length).toBe(1)
+    expect(Storage.mock.calls[0][0]).toEqual(opt)
   })
 
   describe('GetChannel', () => {
@@ -15,7 +29,7 @@ describe('#Services - data', () => {
         const options = {
           channel: 'foo'
         }
-        data.getChannel(options)
+        data(options)
       }).toThrow(new Error('The channel "foo" doesn\'t exist. Available : google-sheet, confluence, csv'))
     })
 
@@ -32,7 +46,7 @@ describe('#Services - data', () => {
           key: 'users'
         }
       }
-      data.getChannel(options)
+      data(options)
 
       expect(Channels['foo-bar'].mock.calls.length).toBe(1)
       expect(Channels['foo-bar'].mock.calls[0][0]).toEqual({ key: 'users' })

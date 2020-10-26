@@ -1,6 +1,6 @@
 {
   "name": "@restqa/restqdata",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Data management for test automation - Restqa Labs",
   "main": "index.js",
   "scripts": {

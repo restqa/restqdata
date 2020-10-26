@@ -32,7 +32,7 @@ npm i -S @restqa/restqdata
 ---
 
 
-#### Example
+#### Example (Getting data from google sheets)
 
 ```js
 const RestQData = require('@restqa/restqdata')
@@ -65,8 +65,34 @@ data.get('users', 3) // get the sheet named "users" and get the row number 3
 
 ```
 
+#### Example (Get the location of a flat file stored)
+
+```js
+// Let say the file 'avatar.png' is stored into the '/custom-storage' folder
+
+const RestQData = require('@restqa/restqdata')
+
+let options = {
+  storage : '/custom-storage'
+}
+
+const data = RestQData(options)
+data.storage('users', 3)
+  .then(response => {
+    console.log(response)
+    /*
+    output: /custom-storage/avatar.png
+    */
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+```
+
 #### Options
 
+* `storage` (optional)  Define a storage location where you are hosting custom files, default: `/tmp/`
 * `channel` (required)  should be on the the following value : `google-sheet`, `confluence`, `csv` 
 
 ##### Google sheets
@@ -86,6 +112,7 @@ data.get('users', 3) // get the sheet named "users" and get the row number 3
 
 * `config.folder` (required) The folder where the dataset files are stored
 * `config.delimiter` (optional) delimiter userd in the csv, default: `,`
+
 
 ### The Server way
 
