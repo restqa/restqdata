@@ -3,7 +3,6 @@ const fs = require('fs')
 
 module.exports = function (options) {
   options = options || {}
-  options.logger = options.logger
 
   if (!options.storage) {
     options.storage = '/tmp/'
