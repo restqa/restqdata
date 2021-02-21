@@ -3,11 +3,13 @@ const fs = require('fs')
 
 module.exports = function (options) {
   options = options || {}
-  options.logger = options.logger || console
+  options.logger = options.logger
 
   if (!options.storage) {
     options.storage = '/tmp/'
-    options.logger.log(`[RESTQDATA] No storage found (default: ${options.storage})`)
+    if (options.logger) {
+      options.logger.log(`[RESTQDATA] No storage found (default: ${options.storage})`)
+    }
   }
 
   const get = (filename) => {
